@@ -6,8 +6,9 @@ import circus from "./images/circus.png";
 import game from "./images/game.png";
 import submarine from "./images/submarine.png";
 import safe from "./images/safe.png";
+import cv from "./Pavithra_Govindan_CV.pdf";
 import "./App.css";
-
+import { Link } from "react-router-dom";
 function App() {
   return (
     <div className="App">
@@ -18,7 +19,7 @@ function App() {
         >
           <div className="container">
             <a className="navbar-brand js-scroll-trigger" href="#page-top">
-              Pavithra Govindan
+              PG
             </a>
             <button
               className="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
