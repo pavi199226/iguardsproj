@@ -1,29 +1,26 @@
+var Twit = require("twit");
+const access_token = "4678874198-5pblAoT8XksHprNq55rDxLI4LZx59BW2K1n5Kkm";
+const access_token_secret = "Baf2LklfkwJgpN4kPgSuwxQugXAFtddEaUExlSh3mZyn7";
+const API_key = "OV8PmRCsn3Co2KgHiH7G2utN4";
+const API_secret_key = "C3CWCaaGiOgkCCTm68GNi60foiIeSKUjYLzj1ac6yhJ1GZ6LUC";
+const t = new Twit({
+  consumer_key: API_key,
+  consumer_secret: API_secret_key,
+  access_token: access_token,
+  access_token_secret: access_token_secret,
+});
 
-
-
-//137612 PUE
-//638242
-//23424757 Belgium
-//23424900 MEXICO
-//753692 BCN
-//766273 Madrid
-
-
-t.get('trends/place', { id: '23424757', exclude: 'hashtags' }, function (err, response) {
-  if (err)
-    return console.error('trends/place.err', err);
-  console.log(response);
-  //var tweets = reply;
-  console.log("HERE");
-  // var ogTenTrends = response[0].trends;
-  // var tenTrends = ogTenTrends.slice(0, 10);
-  // var tenTrendsString = JSON.stringify(tenTrends);
-  // console.log(tenTrendsString);
-
-  const trends = response[0].trends;
-  options.series[0].data = trends.map(t => t.tweet_volume);
-  options.xaxis.categories = trends.map(t => t.name);
-  chart = new ApexCharts(document.querySelector('#chart'), options);
-  chart.render();
-})
-
+t.get("search/tweets", { q: "corona since:2011-07-11", count: 5 }, function (
+  err,
+  data,
+  response
+) {
+  console.log(data);
+});
+t.post("statuses/update", { status: "hello world!" }, function (
+  err,
+  data,
+  response
+) {
+  console.log(data);
+});
